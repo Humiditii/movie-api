@@ -23,5 +23,6 @@ func LoadEnv(){
 
 	AppEnvs = &appSecrets{
 		Port: os.Getenv("PORT"),
+		DbUrl: os.Getenv("DB_URL"),
 	}
 }

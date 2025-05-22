@@ -15,7 +15,7 @@ import (
 )
 
 func main() {
-	db := database.Connect("mongodb://localhost:27017")
+	db := database.Connect(config.AppEnvs.DbUrl)
 
 	config.LoadEnv()
 
