@@ -15,10 +15,10 @@ import (
 )
 
 func main() {
-	db := database.Connect(config.AppEnvs.DbUrl)
-
+	
 	config.LoadEnv()
 
+	db := database.Connect(config.AppEnvs.DbUrl)
 	// DI for Movies
 	movieRepo := movies.NewRepository(db)
 	movieService := movies.NewService(movieRepo)
