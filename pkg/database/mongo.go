@@ -9,7 +9,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-func Connect(uri string) *mongo.Database {
+func Connect(uri,databaseName string) *mongo.Database {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
@@ -18,5 +18,5 @@ func Connect(uri string) *mongo.Database {
 		log.Fatalf("MongoDB connection error: %v", err)
 	}
 
-	return client.Database("yourdbname")
+	return client.Database(databaseName)
 }

@@ -9,6 +9,7 @@ import (
 type appSecrets struct {
 	Port string
 	DbUrl string
+	DatabaseName string
 }
 
 var AppEnvs *appSecrets
@@ -24,5 +25,6 @@ func LoadEnv(){
 	AppEnvs = &appSecrets{
 		Port: os.Getenv("PORT"),
 		DbUrl: os.Getenv("DB_URL"),
+		DatabaseName: os.Getenv("DATABASE_NAME"),
 	}
 }
